@@ -1,0 +1,24 @@
+replicaCount: 2
+
+image:
+  repository: demo-service
+  tag: latest
+  pullPolicy: IfNotPresent
+
+config:
+  appName: demo
+  version: 1.0.0
+
+ingress:
+  enabled: true
+  className: nginx
+  host: demo.local
+  annotations: {}
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 250m
+    memory: 256Mi
